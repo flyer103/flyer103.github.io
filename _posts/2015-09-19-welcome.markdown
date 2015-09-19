@@ -5,5 +5,5 @@ date: 2015-09-19 18:05:22
 categories: thinking
 ---
 这是我新的 blog，之前一直在 `点点轻博客` 写，但近来一段时间访问异常，转移阵地了，
-在 git pages 上写 blog，也免去了对 blog 的管理，专注于 blog 内容。
+在 git pages 上写 blog，也免去了对 blog 的管理，专注于 blog 内容。 
 嗯，欢迎访问我的 blog :D
