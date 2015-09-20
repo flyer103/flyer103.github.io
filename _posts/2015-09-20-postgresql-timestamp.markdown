@@ -1,10 +1,11 @@
 ---
 layout: post
-title: postgresql 中的 "timestamp with time zone" 和 "timestamp without timezone" 的区别
+title: "postgresql 中的 timestamp with time zone 和 timestamp without timezone 的区别"
 date: 2015-09-20 18:00:17
 categories: theory, postgresql, time
 ---
-迁移下 2014-12-29 写的一篇 blog。
+迁移下 2014-12-29 写的一篇 blog。  
+<hr>
 
 在 [postgresql-9.4 Date/Time Types][postgresql-9.4 Date/Time Types] 文档中可以发现有这两种类型的 timestamp:  
 
@@ -26,6 +27,7 @@ categories: theory, postgresql, time
 * 以当地时间存储数据到 `timestamp without time zone` 类型的字段时，postgres 底层以输入的数据进行存储，展示时会原样展示，与 postgres 设置的时区无关  
 
 
+<hr>
 参考:  
 
 * [Difference between timestamps with/without time zone in PostgreSQL][Difference between timestamps with/without time zone in PostgreSQL]  
@@ -38,12 +40,12 @@ categories: theory, postgresql, time
 * [wiki UTC][wiki UTC]  
 
 
-[Difference between timestamps with/without time zone in PostgreSQL]: http://stackoverflow.com/questions/5876218/difference-between-timestamps-with-without-time-zone-in-postgresql
+[Difference between timestamps with/without time zone in PostgreSQL]: http://stackoverflow.com/questions/5876218/difference-between-timestamps-with-without-time-zone-in-postgresql  
 [Always Use TIMESTAMP WITH TIME ZONE]: http://justatheory.com/computers/databases/postgresql/use-timestamptz.html  
-[Partitioning and Constraint Exclusion]: http://www.postgresql.org/docs/9.4/static/ddl-partitioning.html#DDL-PARTITIONING-CONSTRAINT-EXCLUSION
-[Constraint exclusion can't process simple constant expressions?]: http://comments.gmane.org/gmane.comp.db.postgresql.performance/29681
-[which timestamp type to choose in a postgresql database?: http://stackoverflow.com/questions/6151084/which-timestamp-type-to-choose-in-a-postgresql-database
-[postgresql9.4 doc Date/Time Types]: http://www.postgresql.org/docs/9.4/static/datatype-datetime.html
-[世界时区]: http://www.worldtimezone.com/index_cn.php
-[wiki UTC]: http://en.wikipedia.org/wiki/Coordinated_Universal_Time
-[postgresql-9.4 Date/Time Types]: http://www.postgresql.org/docs/9.4/static/datatype-datetime.html
+[Partitioning and Constraint Exclusion]: http://www.postgresql.org/docs/9.4/static/ddl-partitioning.html#DDL-PARTITIONING-CONSTRAINT-EXCLUSION  
+[Constraint exclusion can't process simple constant expressions?]: http://comments.gmane.org/gmane.comp.db.postgresql.performance/29681  
+[which timestamp type to choose in a postgresql database?]: http://stackoverflow.com/questions/6151084/which-timestamp-type-to-choose-in-a-postgresql-database  
+[postgresql9.4 doc Date/Time Types]: http://www.postgresql.org/docs/9.4/static/datatype-datetime.html  
+[世界时区]: http://www.worldtimezone.com/index_cn.php  
+[wiki UTC]: http://en.wikipedia.org/wiki/Coordinated_Universal_Time  
+[postgresql-9.4 Date/Time Types]: http://www.postgresql.org/docs/9.4/static/datatype-datetime.html  

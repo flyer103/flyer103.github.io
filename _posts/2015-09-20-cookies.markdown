@@ -1,0 +1,82 @@
+---
+layout: post
+title: cookie 小结
+date: 2015-09-20 18:20:44
+categories: web, http, cookie
+---
+迁移下 2015-05-03 写的一篇 blog。
+<hr>
+
+总结了下 http cookie 相关的，系统学习下 cookie。  
+
+cookie 是用来记录用户浏览状态的一种方法。
+
+cookie 结构:  
+
+* value  
+* zero or more attributes  
+
+cookie 可通过两种途径被设置:  
+
+* 浏览器访问网站时，由网站设置  
+    * 通过在 http response 中设置 “Set-Cookie” 字段，形式类似  
+        * Set-Cookie: NAME=VALUE     (session cookie)  
+        * Set-Cookie: NAME=VALUE; Expire=TIME    (persistent cookie)  
+        * Set-Cookie: NAME=VALUE; 属性名=属性值; …; 属性名=属性值 (对于 Secure 和 HttpOnly 属性，只有属性名，没有属性值)  
+* 由客户端脚本设置 (但 httponly cookie 不能被设置)  
+
+一般讲到 cookie 时，指的是第一种形式设置的 cookie。  
+
+cookie 属性的目的是，告知浏览器如何处理这些 cookie，包括:  
+
+* 何时删除 cookie  
+* 是否把该 cookie 发送给服务器  
+
+网站设置 cookie 时可能会设置该 cookie 的属性，但浏览器发送请求时，对 cookie 只会发送 name=value 的形式，不会带上该 cookie 属性，形式为:  
+
+* Cookie: name=value; name=value; …; name=value  
+
+常见的 cookie 属性:  
+
+* Domain and Path  
+    * 指明 cookie 所属的范围  
+    * 显示指定这两个属性时，该 cookie 可作用于该域的子域  
+    * 只设置 path 但没设置 domain 或没有设置这两个属性时，该 cookie 只能作用于 path 所在的域或当前域，不能作用于该域的子域  
+* Expires and Max-Age  
+    * Expires 指明该 cookie 被删除的具体时刻  
+    * Max-Age 指明该 cookie 从被设置到被删除的时间间隔  
+* Secure and HttpOnly  
+    * 这两个属性没有属性值  
+    * Secure 属性表示该 cookie 只能在加密传输中被传输，但可以在非安全连接中设置 cookie 的该属性  
+    * HttpOnly 属性告知浏览器该 cookie 只能在 http/https 请求中被访问到  
+
+cookie 分类 (这些分类由 cookie 的属性决定):  
+
+* session cookie  
+    * alias: in-memory cookie，transient cookie  
+    * 在 http response 中，若 "Set-Cookie” 字段设置的 cookie 没有设置超时属性时，认为是 session cookie。当浏览器关闭时，该类型的 cookie 会自动被删除  
+* persistent cookie  
+    * alias: tracking cookie  
+    * 在 http response 中，server 会设置该 cookie 的超时时间  
+* secure cookie  
+    * 该类型的 cookie 只能在加密的连接中被传输  
+* httponly cookie  
+    * 该类型的 cookie 只能在 http/https 协议中传输  
+* first-party cookie  
+    * 该类型的 cookie 属于当前访问的域  
+* third-party cookie  
+    * 该类型的 cookie 在非当前访问的域中被设置  
+* super cookie  
+    * 该 cookie 的域为顶级域，是当前访问的域的超集  
+* zombie cookie  
+    * 客户端脚本会检查该 cookie 被设置的位置，若该位置的该 cookie 被删除，客户端脚本会自动生成该 cookie  
+
+<hr>  
+参考:  
+
+* [wiki: http cookie][wiki: http cookie]  
+* [RFC6265: Http State Management Mechanism][RFC6265: Http State Management Mechanism]  
+
+
+[wiki: http cookie]: http://en.wikipedia.org/wiki/HTTP_cookie
+[RFC6265: Http State Management Mechanism]: http://tools.ietf.org/html/rfc6265
