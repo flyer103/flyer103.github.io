@@ -71,7 +71,7 @@ cookie 分类 (这些分类由 cookie 的属性决定):
 * zombie cookie  
     * 客户端脚本会检查该 cookie 被设置的位置，若该位置的该 cookie 被删除，客户端脚本会自动生成该 cookie  
 
-<hr>
+<hr>  
 参考:  
 
 * [wiki: http cookie][wiki: http cookie]  
