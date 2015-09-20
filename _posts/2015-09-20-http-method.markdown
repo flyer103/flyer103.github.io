@@ -17,7 +17,6 @@ categories: http, web, http method, theory
 * 常见工具对 http post 的处理  
 * http get 参数长度  
 
-<br><br>
 ### http 协议的简单结构  
 参考下 [这个图片][http protocol format]，比较清晰地勾画出了 http 协议的格式：  
 
