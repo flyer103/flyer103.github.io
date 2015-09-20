@@ -4,7 +4,8 @@ title: "postgresql 中的 timestamp with time zone 和 timestamp without timezon
 date: 2015-09-20 18:00:17
 categories: theory, postgresql, time
 ---
-迁移下 2014-12-29 写的一篇 blog。
+迁移下 2014-12-29 写的一篇 blog。  
+<hr>
 
 在 [postgresql-9.4 Date/Time Types][postgresql-9.4 Date/Time Types] 文档中可以发现有这两种类型的 timestamp:  
 
@@ -26,6 +27,7 @@ categories: theory, postgresql, time
 * 以当地时间存储数据到 `timestamp without time zone` 类型的字段时，postgres 底层以输入的数据进行存储，展示时会原样展示，与 postgres 设置的时区无关  
 
 
+<hr>
 参考:  
 
 * [Difference between timestamps with/without time zone in PostgreSQL][Difference between timestamps with/without time zone in PostgreSQL]  
