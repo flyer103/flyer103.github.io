@@ -96,21 +96,21 @@ Internet media type 中定义的一些 type 参考了 [MIME][MIME]。MIME 全称
 ### html form  
 html form 可通过 http get 和 http post 两种形式传输数据，根据 [这篇文档的描述][w3org: form]:  
 
-* 采用 http get 时，user agent (如浏览器) 通过 `application/x-www-form-urlencoded` 方式编码提交的数据，并通过常见的 http get 形式传输数据。这种方式严格限定于处理 ASCII 字符串，同时必须是 [幂等行为][wiki: idempotence]，简单来说就是，这次行为不会影响到处理方的状态，如数据库中的数据不会有变更等  
+* 采用 http get 时，user agent (如浏览器) 通过 `application/x-www-form-urlencoded` 方式编码提交的数据，并通过常见的 http get 形式传输数据。这种方式严格限定于处理 ASCII 字符串，同时必须是 [幂等行为][wiki idempotence]，简单来说就是，这次行为不会影响到处理方的状态，如数据库中的数据不会有变更等  
 * 采用 http post 时，可以接收 3 种形式的 enctype:  
     * application/x-www-from-urlencoded  
       它是默认的 Content-Type，只能用于处理 ASCII 字符串。
     * multipart/form-data  
       它可以用来处理大量的二进制数据和非 ASCII 编码的字符串。
     * text/plain  
-      参考 [html5_forms:plain-encoding-algorithm][html5_forms:plain-encoding-algorithm]，不建议使用  
+      参考 [html5_forms: plain-encoding-algorithm][html5_forms plain-encoding-algorithm]，不建议使用  
       
 即 html form 采用 http post 方法传输数据时，限定了可以采用的 Content-Type 类型。
 
 ### 常见工具对 http post 的处理  
 对 jQuery 而言，通过 ajax 方式发送 post/get 请求时，默认的 Content-Type 是 `application/x-www-form-urlencoded; charset=UTF-8` 。  
 
-PHP 中，[$_POST][php_manual: $_POST] 只能处理 `application/x-www-form-urlencoded` 和 `multipart/form-data` 的数据，对于其他 Internet media type 的数据，先通过 [php://input][php_manual: input] 获取原始的 http body 数据，然后再根据 http header 中的 Content-Type 进行解析。  
+PHP 中，[$_POST][php_manual $_POST] 只能处理 `application/x-www-form-urlencoded` 和 `multipart/form-data` 的数据，对于其他 Internet media type 的数据，先通过 [php://input][php_manual input] 获取原始的 http body 数据，然后再根据 http header 中的 Content-Type 进行解析。  
 
 [python requests][python requests] 通过 http post 传输数据时，底层通过 post 的参数决定 content-type 类型 (也可以显式指定)。  
 
@@ -131,13 +131,13 @@ http 协议中没有限定 http get 参数的长度，但在实际使用时，`w
 * [w3_form][w3_form]  
 * [RFC2616-Entity][RFC2616-Entity]  
 * [What are idempotent and/or safe methods?][What are idempotent and/or safe methods?]  
-* [w3school:att_form_enctype][w3school:att_form_enctype]  
+* [w3school: att_form_enctype][w3school att_form_enctype]  
 * [What does enctype='multipart/form-data' mean?][What does enctype='multipart/form-data' mean?]  
 * [Form content type for a json HTTP POST?][Form content type for a json HTTP POST?]  
 * [How are parameters sent in an HTTP POST request?][How are parameters sent in an HTTP POST request?]  
-* [RFC2388: multipart/form-data][RFC2388: multipart/form-data]  
+* [RFC2388: multipart/form-data][RFC2388 multipart/form-data]  
 * [四种常见的 POST 提交数据方式][四种常见的 POST 提交数据方式]  
-* [php:php//input][php_manual: input]  
+* [php:php//input][php_manual input]  
 * [PHP “php://input” vs $_POST][PHP “php://input” vs $_POST]  
 * [Is there a limit to the length of a GET request?][Is there a limit to the length of a GET request?]  
 * [What is the limit on QueryString / GET / URL parameters][What is the limit on QueryString / GET / URL parameters]  
@@ -151,19 +151,19 @@ http 协议中没有限定 http get 参数的长度，但在实际使用时，`w
 [w3_form]: http://www.w3.org/TR/html401/interact/forms.html
 [MIME]: http://en.wikipedia.org/wiki/MIME
 [w3org: form]http://www.w3.org/TR/html401/interact/forms.html#h-17.13.3
-[wiki: idempotence]: http://en.wikipedia.org/wiki/Idempotence
-[html5_forms:plain-encoding-algorithm]: http://www.w3.org/TR/html5/forms.html#text/plain-encoding-algorithm
-[php_manual: $_POST]: http://php.net/manual/en/reserved.variables.post.php
-[php_manual: input]: http://php.net/manual/en/wrappers.php.php#wrappers.php.input
-[python requests]: http://docs.python-requests.org/en/latest/
+[wiki idempotence]: http://en.wikipedia.org/wiki/Idempotence
+[html5_forms plain-encoding-algorithm]: http://www.w3.org/TR/html5/forms.html#text/plain-encoding-algorithm
+[php_manual $_POST]: http://php.net/manual/en/reserved.variables.post.php
+[php_manual input]: http://php.net/manual/en/wrappers.php.php#wrappers.php.input
+[python requests]: http://docs.python-requests.org/en/latest
 [Communication Networks/HTTP Protocol]: http://en.wikibooks.org/wiki/Communication_Networks/HTTP_Protocol
 [RFC2616-Entity]: http://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html
 [What are idempotent and/or safe methods?]: http://restcookbook.com/HTTP%20Methods/idempotency/
-[w3school:att_form_enctype]: http://www.w3schools.com/tags/att_form_enctype.asp
+[w3school att_form_enctype]: http://www.w3schools.com/tags/att_form_enctype.asp
 [What does enctype='multipart/form-data' mean?]: http://stackoverflow.com/questions/4526273/what-does-enctype-multipart-form-data-mean
 [Form content type for a json HTTP POST?]: http://stackoverflow.com/questions/4249609/form-content-type-for-a-json-http-post
 [How are parameters sent in an HTTP POST request?]: http://stackoverflow.com/questions/14551194/how-are-parameters-sent-in-an-http-post-request
-[RFC2388: multipart/form-data]: http://tools.ietf.org/html/rfc2388
+[RFC2388 multipart/form-data]: http://tools.ietf.org/html/rfc2388
 [四种常见的 POST 提交数据方式]: https://www.imququ.com/post/four-ways-to-post-data-in-http.html
 [PHP “php://input” vs $_POST]: http://stackoverflow.com/questions/8893574/php-php-input-vs-post
 [Is there a limit to the length of a GET request?]: http://stackoverflow.com/questions/266322/is-there-a-limit-to-the-length-of-a-get-request
