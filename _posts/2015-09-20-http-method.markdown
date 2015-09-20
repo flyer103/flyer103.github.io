@@ -150,7 +150,7 @@ http 协议中没有限定 http get 参数的长度，但在实际使用时，`w
 [Internet media type]: http://en.wikipedia.org/wiki/Internet_media_type
 [w3_form]: http://www.w3.org/TR/html401/interact/forms.html
 [MIME]: http://en.wikipedia.org/wiki/MIME
-[w3org: form]http://www.w3.org/TR/html401/interact/forms.html#h-17.13.3
+[w3org: form]: http://www.w3.org/TR/html401/interact/forms.html#h-17.13.3
 [wiki idempotence]: http://en.wikipedia.org/wiki/Idempotence
 [html5_forms plain-encoding-algorithm]: http://www.w3.org/TR/html5/forms.html#text/plain-encoding-algorithm
 [php_manual $_POST]: http://php.net/manual/en/reserved.variables.post.php
