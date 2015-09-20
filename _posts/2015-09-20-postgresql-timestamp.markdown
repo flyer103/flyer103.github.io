@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "postgresql 中的 "timestamp with time zone" 和 " timestamp without timezone" 的区别"
+title: postgresql 中的 "timestamp with time zone" 和 "timestamp without timezone" 的区别
 date: 2015-09-20 18:00:17
 categories: theory, postgresql, time
 ---
