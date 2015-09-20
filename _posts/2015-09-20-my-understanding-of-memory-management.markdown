@@ -2,7 +2,7 @@
 layout: post
 title: "对 garbage collection 的理解"
 date: 2015-09-20 15:35:39
-categories: thinkings,theory,garbage collection,memory management
+categories: theory,garbage collection,memory management
 ---
 周末没事儿，补下基础知识，系统理解下 `garbage collection` 相关的内容。由于它属于
 `memory management` 的范畴，先理解下 `memory mangement` 相关的。  
