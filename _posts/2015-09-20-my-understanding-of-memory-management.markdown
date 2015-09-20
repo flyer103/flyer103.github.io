@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 到解决问题的逻辑而非语言使用细节上，另一方面可以帮助减少一些因为『内存管理』带来
 的风险和 bug。  
 
-来自 [wiki: garbage collection][wiki: garbage collection] 总结了『garbage
+[wiki: garbage collection][wiki: garbage collection] 总结了『garbage
 collection』 的优缺点:  
 
 * 优点  
@@ -163,7 +163,7 @@ collection』 的优缺点:
   * incompatibility with manual resource management  
 
 ### 什么是『garbage collection』?
-来自 [wiki: garbage collection][wiki: garbage collection] 的解释:
+[wiki: garbage collection][wiki: garbage collection] 的解释:
 
 > In computer science, `garbage collection` (GC) is a form of automatic memory
 > manegement. The `garbage collector`, or just `collector`, attempts to reclaim
@@ -175,7 +175,7 @@ collection』 的优缺点:
 ###『garbage collection』的策略和应用有哪些？  
 『GC』的基本策略是 `找到程序中不再被使用的数据对象，释放对应的内存`。  
 
-常量的『GC』策略:  
+常见的『GC』策略:  
 
 * [tracing][wiki: tracing garbage collection] (最常用)  
   * The overall strategy consists of determining which objects should be garbage
