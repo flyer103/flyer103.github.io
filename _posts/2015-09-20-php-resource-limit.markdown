@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "从 资源访问控制 角度理解 PHP 的几个关键字"
+title: "从 资源访问控 角度理解 PHP 的几个关键字"
 date: 2015-09-20 18:12:38
 categories: php, class, resource
 ---
