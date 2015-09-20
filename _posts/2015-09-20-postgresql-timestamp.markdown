@@ -42,7 +42,7 @@ categories: theory, postgresql, time
 [Always Use TIMESTAMP WITH TIME ZONE]: http://justatheory.com/computers/databases/postgresql/use-timestamptz.html  
 [Partitioning and Constraint Exclusion]: http://www.postgresql.org/docs/9.4/static/ddl-partitioning.html#DDL-PARTITIONING-CONSTRAINT-EXCLUSION  
 [Constraint exclusion can't process simple constant expressions?]: http://comments.gmane.org/gmane.comp.db.postgresql.performance/29681  
-[which timestamp type to choose in a postgresql database?: http://stackoverflow.com/questions/6151084/which-timestamp-type-to-choose-in-a-postgresql-database  
+[which timestamp type to choose in a postgresql database?]: http://stackoverflow.com/questions/6151084/which-timestamp-type-to-choose-in-a-postgresql-database  
 [postgresql9.4 doc Date/Time Types]: http://www.postgresql.org/docs/9.4/static/datatype-datetime.html  
 [世界时区]: http://www.worldtimezone.com/index_cn.php  
 [wiki UTC]: http://en.wikipedia.org/wiki/Coordinated_Universal_Time  
