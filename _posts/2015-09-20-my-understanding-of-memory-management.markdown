@@ -226,7 +226,7 @@ Go 混合使用 `stop the world(STW)` 和 `concurrent garbage collection(CGC)` G
 * [wiki: tracing garbage collection][wiki: tracing garbage collection]  
 * [wiki: reference counting garbage collection][wiki: reference counting garbage collection]  
 * [wiki: manual memory management][wiki: manual memory management]  
-* [stackoverflow: Stack variables vs. Heap variables][[stackoverflow: Stack variables vs. Heap variables]  
+* [stackoverflow: Stack variables vs. Heap variables][stackoverflow: Stack variables vs. Heap variables]  
 * [stackoverflow: Why Java and Python garbage collection methods are different?][stackoverflow: Why Java and Python garbage collection methods are different?]  
 * [quora: What are the differences between Python and Java memory management?][quora: What are the differences between Python and Java memory management?]  
 * [php: memory management][php: memory management]  
