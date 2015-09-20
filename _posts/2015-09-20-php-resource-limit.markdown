@@ -4,6 +4,8 @@ title: "从 资源访问控制 角度理解 PHP 的几个关键字"
 date: 2015-09-20 18:12:38
 categories: php, class, resource
 ---
+迁移下 2015-03-09 写的一篇 blog。
+
 ### 综述
 这几天从『资源访问控制』 的角度来理解 PHP 的 `static`、`public`、`protected` 和 `private` 关键字，感觉还挺有趣的。  
 
