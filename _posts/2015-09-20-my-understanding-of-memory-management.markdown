@@ -216,7 +216,9 @@ PHP 使用 reference counting based GC，同时限制每个实例可以使用的
 
 Go 混合使用 `stop the world(STW)` 和 `concurrent garbage collection(CGC)` GC。
 
-### Reference
+<hr>
+参考:  
+
 * [memory management][memory management]  
 * [stack overflow][stack overflow]  
 * [memory leak][memory leak]  
