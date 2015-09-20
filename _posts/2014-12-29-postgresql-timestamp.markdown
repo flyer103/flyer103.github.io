@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "postgresql 中的 "timestamp with time zone" 和 " timestamp without timezone" 的区别"
-date: 2014-12-29 14:00:00
+date: 2015-09-20 18:00:17
 categories: theory, postgresql, time
 ---
+迁移下 2014-12-29 写的一篇 blog。
+
 在 [postgresql-9.4 Date/Time Types][postgresql-9.4 Date/Time Types] 文档中可以发现有这两种类型的 timestamp:  
 
 * timestamp with time zone  
