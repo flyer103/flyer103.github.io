@@ -7,7 +7,7 @@ categories: web, http, storage
 迁移下 2015-05-03 写的一篇 blog。
 <hr>
 
-最近了解到一个叫 [web storage][web storage] 的概念，系统总结下。
+最近了解到一个叫 [web storage][wiki: web storage] 的概念，系统总结下。
 
 alias: dom storage
 
