@@ -11,7 +11,7 @@ github_username:  flyer103
 # Build settings
 markdown: kramdown
 
-timezone: Asia/Shanghai
+# timezone: Asia/Shanghai
 encoding: utf-8
 author: flyer
 author_email: flyer103@gmail.com
