@@ -9,7 +9,8 @@ categories: thinkings,theory,garbage collection,memory management
 
 理解可能会存在错误，请指正。  
 
-这篇 blog 按如下方式组织:
+这篇 blog 按如下方式组织:  
+
 * 什么是『memory management』？  
 * 什么是『garbage collection』?  
 * 『garbage collection』的策略和应用有哪些？  
@@ -25,6 +26,7 @@ categories: thinkings,theory,garbage collection,memory management
 > it for reuse when no longer needed.
 
 即『memory management』包含两部分:  
+
 * 内存分配  
 * 内存收回  
 
@@ -38,9 +40,10 @@ heap 的空间很大，一些通过显式分配内存的变量通常占用的都
 空间需要手动或通过自动化的手段进行释放，避免出现 [memory leak][memory leak] 现象，
 造成程序性能下降或影响系统的稳定性。  
 
-在 [这篇 blog][memory stack vs heap] 中总结了 stack 和 heap 的优缺点，挺有用的:  
+[这篇 blog][memory stack vs heap] 总结了 stack 和 heap 的优缺点，挺有用的:  
 
 stack:  
+
 * very fast access  
 * don't have to explicitly de-allocate variables  
 * space is managed efficiently by CPU, memory will not become fragmented  
@@ -49,6 +52,7 @@ stack:
 * variables cannot be resized  
 
 heap:  
+
 * variables can be accessed globally  
 * no limit on memory size  
 * (relatively) slower access  
@@ -62,7 +66,7 @@ blocks of memory are allocated, then freed
 
 例 1:  
 
-{% highlight c lineno %}
+{% highlight c linenos %}
 #include <stdio.h>
 
 double multiplyByTwo(double input) {
@@ -84,7 +88,7 @@ int main(int argc, char *argv[])
 
 例 2:  
 
-{% highlight c lineno %}
+{% highlight c linenos %}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -122,18 +126,20 @@ int main(int argc, char *argv[])
 回』。  
 
 对于『内存收回』，有两种不同的策略:  
-* [manual][wiki: manual memory management]
-  * 开发人员负责，手动释放，如 C、C++
-  * 其中有个比较有趣的，是 [RAII: Resource Acquisition is Initialization][RAII]
+
+* [manual][wiki: manual memory management]  
+  * 开发人员负责，手动释放，如 C、C++  
+  * 其中有个比较有趣的，是 [RAII: Resource Acquisition is Initialization][RAII]  
 * auto  
   * 作为语言的 feature 或实现，如『garbage collection』  
 
-使用了 GC 的语言，一方面可以减轻开发人员的负担，使得开发人员可以将注意力更加集中
+使用包含了 GC 的语言，一方面可以减轻开发人员的负担，使得开发人员可以将注意力更加集中
 到解决问题的逻辑而非语言使用细节上，另一方面可以帮助减少一些因为『内存管理』带来
 的风险和 bug。  
 
 来自 [wiki: garbage collection][wiki: garbage collection] 总结了『garbage
 collection』 的优缺点:  
+
 * 优点  
   * It frees the programmer from manually dealing with memory deallocation. As a
   result, certain categories of bugs are eliminated or substantially reduced:  
@@ -149,7 +155,7 @@ collection』 的优缺点:
 	exhaustion. (Garbage collection typically does not deal with the unbound
 	accumulation of data that is reachable, but that will actually not be used
 	by the program)  
-    * Efficient implementation of persistent data structures.
+    * Efficient implementation of persistent data structures.  
 * 缺点  
   * consuming additional resources  
   * performance impacts  
@@ -170,6 +176,7 @@ collection』 的优缺点:
 『GC』的基本策略是 `找到程序中不再被使用的数据对象，释放对应的内存`。  
 
 常量的『GC』策略:  
+
 * [tracing][wiki: tracing garbage collection] (最常用)  
   * The overall strategy consists of determining which objects should be garbage
   collected by tracing which objects are reachable by a chain of references from
@@ -186,7 +193,7 @@ collection』 的优缺点:
 	formally, reachability is a transitive closure.  
   * reference 策略:  
     * strong reference  
-    * weak reference
+    * weak reference  
 * [reference counting][wiki: reference counting garbage collection]  
   * `Reference counting` is a form fo garbage collection whereby each object has
   a count of number of references to it. `Garbage` is identified by having a
@@ -198,7 +205,7 @@ collection』 的优缺点:
   reference is destroyed, and usually only accesses memory which is either in
   CPU caches, in objects to be freed, or directly pointed by those, and thus
   tends to not have significant negative side effects on CPU cache and virtual
-  memory operation.
+  memory operation.  
 
 ### 常用语言的『memory management』策略
 Python 的 `CPython` 实现使用 reference counting based GC。
@@ -219,7 +226,7 @@ Go 混合使用 `stop the world(STW)` 和 `concurrent garbage collection(CGC)` G
 * [wiki: tracing garbage collection][wiki: tracing garbage collection]  
 * [wiki: reference counting garbage collection][wiki: reference counting garbage collection]  
 * [wiki: manual memory management][wiki: manual memory management]  
-* [stackoverflow: Stack variables vs. Heap variables][[stackoverflow: Stack variables vs. Heap variables]]  
+* [stackoverflow: Stack variables vs. Heap variables][[stackoverflow: Stack variables vs. Heap variables]  
 * [stackoverflow: Why Java and Python garbage collection methods are different?][stackoverflow: Why Java and Python garbage collection methods are different?]  
 * [quora: What are the differences between Python and Java memory management?][quora: What are the differences between Python and Java memory management?]  
 * [php: memory management][php: memory management]  
